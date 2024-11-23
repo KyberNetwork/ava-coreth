@@ -39,9 +39,6 @@ import (
 	"testing"
 	"testing/quick"
 
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/trie/trienode"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
@@ -50,6 +47,10 @@ import (
 	"github.com/holiman/uint256"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/crypto/sha3"
+
+	"github.com/ava-labs/coreth/core/rawdb"
+	"github.com/ava-labs/coreth/core/types"
+	"github.com/ava-labs/coreth/trie/trienode"
 )
 
 func init() {
@@ -827,10 +828,10 @@ type spongeDb struct {
 func (s *spongeDb) Has(key []byte) (bool, error)             { panic("implement me") }
 func (s *spongeDb) Get(key []byte) ([]byte, error)           { return nil, errors.New("no such elem") }
 func (s *spongeDb) Delete(key []byte) error                  { panic("implement me") }
+func (s *spongeDb) DeleteRange(start, end []byte) error      { panic("implement me") }
 func (s *spongeDb) NewBatch() ethdb.Batch                    { return &spongeBatch{s} }
 func (s *spongeDb) NewBatchWithSize(size int) ethdb.Batch    { return &spongeBatch{s} }
-func (s *spongeDb) NewSnapshot() (ethdb.Snapshot, error)     { panic("implement me") }
-func (s *spongeDb) Stat(property string) (string, error)     { panic("implement me") }
+func (s *spongeDb) Stat() (string, error)                    { panic("implement me") }
 func (s *spongeDb) Compact(start []byte, limit []byte) error { panic("implement me") }
 func (s *spongeDb) Close() error                             { return nil }
 func (s *spongeDb) Put(key []byte, value []byte) error {

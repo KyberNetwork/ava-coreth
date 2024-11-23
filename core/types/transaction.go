@@ -36,7 +36,6 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
 )
@@ -368,7 +367,13 @@ func (tx *Transaction) EffectiveGasTip(baseFee *big.Int) (*big.Int, error) {
 	if gasFeeCap.Cmp(baseFee) == -1 {
 		err = ErrGasFeeCapTooLow
 	}
-	return math.BigMin(tx.GasTipCap(), gasFeeCap.Sub(gasFeeCap, baseFee)), err
+	gasFeeCap = gasFeeCap.Sub(gasFeeCap, baseFee)
+
+	gasTipCap := tx.GasTipCap()
+	if gasTipCap.Cmp(gasFeeCap) < 0 {
+		return gasTipCap, err
+	}
+	return gasFeeCap, err
 }
 
 // EffectiveGasTipValue is identical to EffectiveGasTip, but does not return an

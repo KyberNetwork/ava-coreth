@@ -6,9 +6,7 @@ package evm
 import (
 	"context"
 	"fmt"
-
-	"github.com/ethereum/go-ethereum/common"
-	"golang.org/x/exp/slog"
+	"log/slog"
 
 	"github.com/ava-labs/avalanchego/api"
 	"github.com/ava-labs/avalanchego/ids"
@@ -17,6 +15,7 @@ import (
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
 	"github.com/ava-labs/avalanchego/utils/json"
 	"github.com/ava-labs/avalanchego/utils/rpc"
+	"github.com/ethereum/go-ethereum/common"
 )
 
 // Interface compliance

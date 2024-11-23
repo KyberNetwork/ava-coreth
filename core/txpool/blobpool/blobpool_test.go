@@ -39,14 +39,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/coreth/consensus/dummy"
-	"github.com/ava-labs/coreth/consensus/misc/eip4844"
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/txpool"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/crypto/kzg4844"
@@ -55,10 +47,19 @@ import (
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/holiman/billy"
 	"github.com/holiman/uint256"
+
+	"github.com/ava-labs/coreth/consensus/dummy"
+	"github.com/ava-labs/coreth/consensus/misc/eip4844"
+	"github.com/ava-labs/coreth/core"
+	"github.com/ava-labs/coreth/core/rawdb"
+	"github.com/ava-labs/coreth/core/state"
+	"github.com/ava-labs/coreth/core/txpool"
+	"github.com/ava-labs/coreth/core/types"
+	"github.com/ava-labs/coreth/params"
 )
 
 var (
-	emptyBlob          = kzg4844.Blob{}
+	emptyBlob          = new(kzg4844.Blob)
 	emptyBlobCommit, _ = kzg4844.BlobToCommitment(emptyBlob)
 	emptyBlobProof, _  = kzg4844.ComputeBlobProof(emptyBlob, emptyBlobCommit)
 	emptyBlobVHash     = kzg4844.CalcBlobHashV1(sha256.New(), &emptyBlobCommit)
@@ -224,7 +225,7 @@ func makeUnsignedTx(nonce uint64, gasTipCap uint64, gasFeeCap uint64, blobFeeCap
 		BlobHashes: []common.Hash{emptyBlobVHash},
 		Value:      uint256.NewInt(100),
 		Sidecar: &types.BlobTxSidecar{
-			Blobs:       []kzg4844.Blob{emptyBlob},
+			Blobs:       []kzg4844.Blob{*emptyBlob},
 			Commitments: []kzg4844.Commitment{emptyBlobCommit},
 			Proofs:      []kzg4844.Proof{emptyBlobProof},
 		},

@@ -31,6 +31,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
+	gomath "math"
 	"math/big"
 	"strings"
 	"time"
@@ -405,7 +406,7 @@ func (s *PersonalAccountAPI) UnlockAccount(ctx context.Context, addr common.Addr
 		return false, errors.New("account unlock with HTTP access is forbidden")
 	}
 
-	const max = uint64(time.Duration(math.MaxInt64) / time.Second)
+	const max = uint64(time.Duration(gomath.MaxInt64) / time.Second)
 	var d time.Duration
 	if duration == nil {
 		d = 300 * time.Second
@@ -1112,7 +1113,7 @@ func doCall(ctx context.Context, b Backend, args TransactionArgs, state *state.S
 	}()
 
 	// Execute the message.
-	gp := new(core.GasPool).AddGas(math.MaxUint64)
+	gp := new(core.GasPool).AddGas(gomath.MaxUint64)
 	result, err := core.ApplyMessage(evm, msg, gp)
 	if err := state.Error(); err != nil {
 		return nil, err

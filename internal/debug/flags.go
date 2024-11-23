@@ -29,6 +29,7 @@ package debug
 import (
 	"fmt"
 	"io"
+	"log/slog"
 	"net"
 	"net/http"
 	_ "net/http/pprof"
@@ -36,13 +37,13 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/ava-labs/coreth/internal/flags"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/mattn/go-colorable"
 	"github.com/mattn/go-isatty"
 	"github.com/urfave/cli/v2"
-	"golang.org/x/exp/slog"
 	"gopkg.in/natefinch/lumberjack.v2"
+
+	"github.com/ava-labs/coreth/internal/flags"
 )
 
 var (

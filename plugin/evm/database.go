@@ -13,14 +13,14 @@ import (
 var (
 	_ ethdb.KeyValueStore = &Database{}
 
-	ErrSnapshotNotSupported = errors.New("snapshot is not supported")
+	ErrDeleteRangeNotSupported = errors.New("delete range is not supported")
 )
 
 // Database implements ethdb.Database
 type Database struct{ database.Database }
 
 // Stat implements ethdb.Database
-func (db Database) Stat(string) (string, error) { return "", database.ErrNotFound }
+func (db Database) Stat() (string, error) { return "", database.ErrNotFound }
 
 // NewBatch implements ethdb.Database
 func (db Database) NewBatch() ethdb.Batch { return Batch{db.Database.NewBatch()} }
@@ -29,8 +29,8 @@ func (db Database) NewBatch() ethdb.Batch { return Batch{db.Database.NewBatch()}
 // TODO: propagate size through avalanchego Database interface
 func (db Database) NewBatchWithSize(size int) ethdb.Batch { return Batch{db.Database.NewBatch()} }
 
-func (db Database) NewSnapshot() (ethdb.Snapshot, error) {
-	return nil, ErrSnapshotNotSupported
+func (db Database) DeleteRange(start, end []byte) error {
+	return ErrDeleteRangeNotSupported
 }
 
 // NewIterator implements ethdb.Database

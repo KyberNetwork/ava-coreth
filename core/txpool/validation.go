@@ -31,14 +31,15 @@ import (
 	"fmt"
 	"math/big"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto/kzg4844"
+	"github.com/ethereum/go-ethereum/log"
+
 	"github.com/ava-labs/coreth/core"
 	"github.com/ava-labs/coreth/core/state"
 	"github.com/ava-labs/coreth/core/types"
 	"github.com/ava-labs/coreth/params"
 	"github.com/ava-labs/coreth/vmerrs"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto/kzg4844"
-	"github.com/ethereum/go-ethereum/log"
 )
 
 var (
@@ -178,7 +179,7 @@ func validateBlobSidecar(hashes []common.Hash, sidecar *types.BlobTxSidecar) err
 	// Blob commitments match with the hashes in the transaction, verify the
 	// blobs themselves via KZG
 	for i := range sidecar.Blobs {
-		if err := kzg4844.VerifyBlobProof(sidecar.Blobs[i], sidecar.Commitments[i], sidecar.Proofs[i]); err != nil {
+		if err := kzg4844.VerifyBlobProof(&sidecar.Blobs[i], sidecar.Commitments[i], sidecar.Proofs[i]); err != nil {
 			return fmt.Errorf("invalid blob %d: %v", i, err)
 		}
 	}

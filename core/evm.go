@@ -29,11 +29,11 @@ package core
 import (
 	"math/big"
 
-	"github.com/ava-labs/coreth/consensus"
-	"github.com/ava-labs/coreth/consensus/misc/eip4844"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/core/vm"
-	"github.com/ava-labs/coreth/predicate"
+	"github.com/KyberNetwork/ava-coreth/consensus"
+	"github.com/KyberNetwork/ava-coreth/consensus/misc/eip4844"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/core/vm"
+	"github.com/KyberNetwork/ava-coreth/predicate"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/holiman/uint256"

@@ -27,14 +27,14 @@
 package core
 
 import (
-	"github.com/ava-labs/coreth/consensus"
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/state/snapshot"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/core/vm"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/triedb"
+	"github.com/KyberNetwork/ava-coreth/consensus"
+	"github.com/KyberNetwork/ava-coreth/core/rawdb"
+	"github.com/KyberNetwork/ava-coreth/core/state"
+	"github.com/KyberNetwork/ava-coreth/core/state/snapshot"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/core/vm"
+	"github.com/KyberNetwork/ava-coreth/params"
+	"github.com/KyberNetwork/ava-coreth/triedb"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/event"
 )

@@ -32,9 +32,9 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/trie/trienode"
+	"github.com/KyberNetwork/ava-coreth/core/rawdb"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/trie/trienode"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 )

@@ -14,12 +14,12 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/precompile/precompileconfig"
-	"github.com/ava-labs/coreth/predicate"
+	"github.com/KyberNetwork/ava-coreth/core"
+	"github.com/KyberNetwork/ava-coreth/core/rawdb"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/params"
+	"github.com/KyberNetwork/ava-coreth/precompile/precompileconfig"
+	"github.com/KyberNetwork/ava-coreth/predicate"
 
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/snow/consensus/snowman"

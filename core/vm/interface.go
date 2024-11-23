@@ -29,8 +29,8 @@ package vm
 import (
 	"math/big"
 
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/params"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/holiman/uint256"
 )

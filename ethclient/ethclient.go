@@ -35,15 +35,15 @@ import (
 	"math/big"
 
 	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/coreth/accounts/abi/bind"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/interfaces"
-	"github.com/ava-labs/coreth/rpc"
+	"github.com/KyberNetwork/ava-coreth/accounts/abi/bind"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/interfaces"
+	"github.com/KyberNetwork/ava-coreth/rpc"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 
 	// Force-load precompiles to trigger registration
-	_ "github.com/ava-labs/coreth/precompile/registry"
+	_ "github.com/KyberNetwork/ava-coreth/precompile/registry"
 )
 
 // Verify that Client implements required interfaces

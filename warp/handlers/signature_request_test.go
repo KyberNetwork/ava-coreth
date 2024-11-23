@@ -13,10 +13,10 @@ import (
 	"github.com/ava-labs/avalanchego/utils/crypto/bls"
 	avalancheWarp "github.com/ava-labs/avalanchego/vms/platformvm/warp"
 	"github.com/ava-labs/avalanchego/vms/platformvm/warp/payload"
-	"github.com/ava-labs/coreth/plugin/evm/message"
-	"github.com/ava-labs/coreth/utils"
-	"github.com/ava-labs/coreth/warp"
-	"github.com/ava-labs/coreth/warp/warptest"
+	"github.com/KyberNetwork/ava-coreth/plugin/evm/message"
+	"github.com/KyberNetwork/ava-coreth/utils"
+	"github.com/KyberNetwork/ava-coreth/warp"
+	"github.com/KyberNetwork/ava-coreth/warp/warptest"
 	"github.com/stretchr/testify/require"
 )
 

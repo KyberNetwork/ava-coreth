@@ -8,9 +8,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ava-labs/coreth/precompile/modules"
-	"github.com/ava-labs/coreth/precompile/precompileconfig"
-	"github.com/ava-labs/coreth/utils"
+	"github.com/KyberNetwork/ava-coreth/precompile/modules"
+	"github.com/KyberNetwork/ava-coreth/precompile/precompileconfig"
+	"github.com/KyberNetwork/ava-coreth/utils"
 	"github.com/ethereum/go-ethereum/common"
 )
 

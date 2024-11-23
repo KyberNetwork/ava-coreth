@@ -32,12 +32,12 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ava-labs/coreth/consensus"
-	"github.com/ava-labs/coreth/consensus/dummy"
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/core/vm"
-	"github.com/ava-labs/coreth/params"
+	"github.com/KyberNetwork/ava-coreth/consensus"
+	"github.com/KyberNetwork/ava-coreth/consensus/dummy"
+	"github.com/KyberNetwork/ava-coreth/core/rawdb"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/core/vm"
+	"github.com/KyberNetwork/ava-coreth/params"
 	"github.com/ethereum/go-ethereum/common"
 )
 

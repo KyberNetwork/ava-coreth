@@ -41,11 +41,11 @@ import (
 	"github.com/ethereum/go-ethereum/crypto/kzg4844"
 	"golang.org/x/crypto/ripemd160"
 
-	"github.com/ava-labs/coreth/crypto/bls12381"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/precompile/contract"
-	"github.com/ava-labs/coreth/precompile/modules"
-	"github.com/ava-labs/coreth/vmerrs"
+	"github.com/KyberNetwork/ava-coreth/crypto/bls12381"
+	"github.com/KyberNetwork/ava-coreth/params"
+	"github.com/KyberNetwork/ava-coreth/precompile/contract"
+	"github.com/KyberNetwork/ava-coreth/precompile/modules"
+	"github.com/KyberNetwork/ava-coreth/vmerrs"
 )
 
 // PrecompiledContract is the basic interface for native Go contracts. The implementation

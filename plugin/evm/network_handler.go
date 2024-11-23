@@ -8,13 +8,13 @@ import (
 
 	"github.com/ava-labs/avalanchego/codec"
 	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/coreth/metrics"
-	"github.com/ava-labs/coreth/plugin/evm/message"
-	syncHandlers "github.com/ava-labs/coreth/sync/handlers"
-	syncStats "github.com/ava-labs/coreth/sync/handlers/stats"
-	"github.com/ava-labs/coreth/triedb"
-	"github.com/ava-labs/coreth/warp"
-	warpHandlers "github.com/ava-labs/coreth/warp/handlers"
+	"github.com/KyberNetwork/ava-coreth/metrics"
+	"github.com/KyberNetwork/ava-coreth/plugin/evm/message"
+	syncHandlers "github.com/KyberNetwork/ava-coreth/sync/handlers"
+	syncStats "github.com/KyberNetwork/ava-coreth/sync/handlers/stats"
+	"github.com/KyberNetwork/ava-coreth/triedb"
+	"github.com/KyberNetwork/ava-coreth/warp"
+	warpHandlers "github.com/KyberNetwork/ava-coreth/warp/handlers"
 	"github.com/ethereum/go-ethereum/ethdb"
 )
 

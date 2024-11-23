@@ -43,7 +43,7 @@ import (
 	"github.com/urfave/cli/v2"
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	"github.com/ava-labs/coreth/internal/flags"
+	"github.com/KyberNetwork/ava-coreth/internal/flags"
 )
 
 var (

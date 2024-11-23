@@ -20,10 +20,10 @@ import (
 	"github.com/ava-labs/avalanchego/snow/engine/common"
 	"github.com/ava-labs/avalanchego/utils/logging"
 
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/txpool"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/eth"
+	"github.com/KyberNetwork/ava-coreth/core"
+	"github.com/KyberNetwork/ava-coreth/core/txpool"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/eth"
 )
 
 const pendingTxsBuffer = 10

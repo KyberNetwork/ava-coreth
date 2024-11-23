@@ -23,8 +23,8 @@ import (
 	"github.com/ava-labs/avalanchego/utils/set"
 	"github.com/ava-labs/avalanchego/version"
 
-	"github.com/ava-labs/coreth/peer/stats"
-	"github.com/ava-labs/coreth/plugin/evm/message"
+	"github.com/KyberNetwork/ava-coreth/peer/stats"
+	"github.com/KyberNetwork/ava-coreth/plugin/evm/message"
 )
 
 // Minimum amount of time to handle a request

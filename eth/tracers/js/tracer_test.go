@@ -34,10 +34,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/vm"
-	"github.com/ava-labs/coreth/eth/tracers"
-	"github.com/ava-labs/coreth/params"
+	"github.com/KyberNetwork/ava-coreth/core/state"
+	"github.com/KyberNetwork/ava-coreth/core/vm"
+	"github.com/KyberNetwork/ava-coreth/eth/tracers"
+	"github.com/KyberNetwork/ava-coreth/params"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/holiman/uint256"
 )

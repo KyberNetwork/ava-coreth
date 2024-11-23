@@ -33,10 +33,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/coreth/accounts/abi/bind"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/ethclient/simulated"
-	"github.com/ava-labs/coreth/params"
+	"github.com/KyberNetwork/ava-coreth/accounts/abi/bind"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/ethclient/simulated"
+	"github.com/KyberNetwork/ava-coreth/params"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 )

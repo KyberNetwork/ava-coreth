@@ -12,12 +12,12 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/rawdb"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/core/vm"
-	"github.com/ava-labs/coreth/eth/tracers"
-	"github.com/ava-labs/coreth/tests"
+	"github.com/KyberNetwork/ava-coreth/core"
+	"github.com/KyberNetwork/ava-coreth/core/rawdb"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/core/vm"
+	"github.com/KyberNetwork/ava-coreth/eth/tracers"
+	"github.com/KyberNetwork/ava-coreth/tests"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/math"
 )

@@ -11,12 +11,12 @@ import (
 	"time"
 
 	"github.com/ava-labs/avalanchego/utils/timer/mockable"
-	"github.com/ava-labs/coreth/consensus"
-	"github.com/ava-labs/coreth/consensus/misc/eip4844"
-	"github.com/ava-labs/coreth/core/state"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/trie"
+	"github.com/KyberNetwork/ava-coreth/consensus"
+	"github.com/KyberNetwork/ava-coreth/consensus/misc/eip4844"
+	"github.com/KyberNetwork/ava-coreth/core/state"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/params"
+	"github.com/KyberNetwork/ava-coreth/trie"
 	"github.com/ethereum/go-ethereum/common"
 )
 

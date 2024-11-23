@@ -25,8 +25,8 @@ import (
 	"github.com/ethereum/go-ethereum/ethdb"
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/internal/blocktest"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/internal/blocktest"
 )
 
 var newTestHasher = blocktest.NewHasher

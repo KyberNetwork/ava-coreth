@@ -13,7 +13,7 @@ import (
 
 	gethlog "github.com/ethereum/go-ethereum/log"
 
-	"github.com/ava-labs/coreth/log"
+	"github.com/KyberNetwork/ava-coreth/log"
 )
 
 type CorethLogger struct {

@@ -33,9 +33,9 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/utils"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/params"
+	"github.com/KyberNetwork/ava-coreth/utils"
 )
 
 func TestEthTxGossip(t *testing.T) {

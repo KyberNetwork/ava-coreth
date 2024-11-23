@@ -1,4 +1,4 @@
-module github.com/ava-labs/coreth
+module github.com/KyberNetwork/ava-coreth
 
 go 1.22.8
 

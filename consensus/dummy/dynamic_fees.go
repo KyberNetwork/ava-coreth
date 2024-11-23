@@ -6,13 +6,14 @@ package dummy
 import (
 	"encoding/binary"
 	"fmt"
+	"math"
 	"math/big"
 
 	"github.com/ava-labs/avalanchego/utils/wrappers"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/params"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
+	cmath "github.com/ethereum/go-ethereum/common/math"
 )
 
 var (
@@ -120,14 +121,14 @@ func CalcBaseFee(config *params.ChainConfig, parent *types.Header, timestamp uin
 		}
 
 		// Compute the new state of the gas rolling window.
-		addedGas, overflow := math.SafeAdd(parent.GasUsed, parentExtraStateGasUsed)
+		addedGas, overflow := cmath.SafeAdd(parent.GasUsed, parentExtraStateGasUsed)
 		if overflow {
 			addedGas = math.MaxUint64
 		}
 
 		// Only add the [blockGasCost] to the gas used if it isn't AP5
 		if !isApricotPhase5 {
-			addedGas, overflow = math.SafeAdd(addedGas, blockGasCost)
+			addedGas, overflow = cmath.SafeAdd(addedGas, blockGasCost)
 			if overflow {
 				addedGas = math.MaxUint64
 			}
@@ -153,7 +154,10 @@ func CalcBaseFee(config *params.ChainConfig, parent *types.Header, timestamp uin
 		num.Mul(num, parent.BaseFee)
 		num.Div(num, parentGasTargetBig)
 		num.Div(num, baseFeeChangeDenominator)
-		baseFeeDelta := math.BigMax(num, common.Big1)
+		baseFeeDelta := num
+		if baseFeeDelta.Cmp(common.Big1) < 0 {
+			baseFeeDelta = common.Big1
+		}
 
 		baseFee.Add(baseFee, baseFeeDelta)
 	} else {
@@ -162,7 +166,10 @@ func CalcBaseFee(config *params.ChainConfig, parent *types.Header, timestamp uin
 		num.Mul(num, parent.BaseFee)
 		num.Div(num, parentGasTargetBig)
 		num.Div(num, baseFeeChangeDenominator)
-		baseFeeDelta := math.BigMax(num, common.Big1)
+		baseFeeDelta := num
+		if baseFeeDelta.Cmp(common.Big1) < 0 {
+			baseFeeDelta = common.Big1
+		}
 		// If [roll] is greater than [rollupWindow], apply the state transition to the base fee to account
 		// for the interval during which no blocks were produced.
 		// We use roll/rollupWindow, so that the transition is applied for every [rollupWindow] seconds
@@ -264,7 +271,7 @@ func sumLongWindow(window []byte, numLongs int) uint64 {
 	for i := 0; i < numLongs; i++ {
 		// If an overflow occurs while summing the elements of the window, return the maximum
 		// uint64 value immediately.
-		sum, overflow = math.SafeAdd(sum, binary.BigEndian.Uint64(window[wrappers.LongLen*i:]))
+		sum, overflow = cmath.SafeAdd(sum, binary.BigEndian.Uint64(window[wrappers.LongLen*i:]))
 		if overflow {
 			return math.MaxUint64
 		}
@@ -278,7 +285,7 @@ func sumLongWindow(window []byte, numLongs int) uint64 {
 func updateLongWindow(window []byte, start uint64, gasConsumed uint64) {
 	prevGasConsumed := binary.BigEndian.Uint64(window[start:])
 
-	totalGasConsumed, overflow := math.SafeAdd(prevGasConsumed, gasConsumed)
+	totalGasConsumed, overflow := cmath.SafeAdd(prevGasConsumed, gasConsumed)
 	if overflow {
 		totalGasConsumed = math.MaxUint64
 	}

@@ -27,7 +27,7 @@
 package core
 
 import (
-	"github.com/ava-labs/coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/core/types"
 	"github.com/ethereum/go-ethereum/common"
 )
 

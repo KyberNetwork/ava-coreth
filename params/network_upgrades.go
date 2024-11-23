@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"github.com/ava-labs/avalanchego/upgrade"
-	"github.com/ava-labs/coreth/utils"
+	"github.com/KyberNetwork/ava-coreth/utils"
 )
 
 type NetworkUpgrades struct {

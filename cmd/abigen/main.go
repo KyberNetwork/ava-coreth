@@ -34,9 +34,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/ava-labs/coreth/accounts/abi/bind"
-	"github.com/ava-labs/coreth/cmd/utils"
-	"github.com/ava-labs/coreth/internal/flags"
+	"github.com/KyberNetwork/ava-coreth/accounts/abi/bind"
+	"github.com/KyberNetwork/ava-coreth/cmd/utils"
+	"github.com/KyberNetwork/ava-coreth/internal/flags"
 	"github.com/ethereum/go-ethereum/common/compiler"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/log"

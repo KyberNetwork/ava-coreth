@@ -6,8 +6,8 @@ package params
 import (
 	"encoding/json"
 
-	"github.com/ava-labs/coreth/precompile/modules"
-	"github.com/ava-labs/coreth/precompile/precompileconfig"
+	"github.com/KyberNetwork/ava-coreth/precompile/modules"
+	"github.com/KyberNetwork/ava-coreth/precompile/precompileconfig"
 )
 
 type Precompiles map[string]precompileconfig.Config

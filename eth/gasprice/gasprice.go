@@ -32,17 +32,17 @@ import (
 	"sync"
 
 	"github.com/ava-labs/avalanchego/utils/timer/mockable"
-	"github.com/ava-labs/coreth/consensus/dummy"
-	"github.com/ava-labs/coreth/core"
-	"github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/params"
-	"github.com/ava-labs/coreth/rpc"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/lru"
-	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/log"
 	"golang.org/x/exp/slices"
+
+	"github.com/KyberNetwork/ava-coreth/consensus/dummy"
+	"github.com/KyberNetwork/ava-coreth/core"
+	"github.com/KyberNetwork/ava-coreth/core/types"
+	"github.com/KyberNetwork/ava-coreth/params"
+	"github.com/KyberNetwork/ava-coreth/rpc"
 )
 
 const (
@@ -229,7 +229,9 @@ func (oracle *Oracle) EstimateBaseFee(ctx context.Context) (*big.Int, error) {
 		return nil, nil
 	}
 
-	baseFee = math.BigMin(baseFee, nextBaseFee)
+	if baseFee.Cmp(nextBaseFee) > 0 {
+		baseFee = nextBaseFee
+	}
 	return baseFee, nil
 }
 
@@ -274,7 +276,9 @@ func (oracle *Oracle) SuggestPrice(ctx context.Context) (*big.Int, error) {
 	// Separately from checking the error value, check that [nextBaseFee] is non-nil
 	// before attempting to take the minimum.
 	if nextBaseFee != nil {
-		baseFee = math.BigMin(baseFee, nextBaseFee)
+		if baseFee.Cmp(nextBaseFee) > 0 {
+			baseFee = nextBaseFee
+		}
 	}
 
 	return new(big.Int).Add(tip, baseFee), nil

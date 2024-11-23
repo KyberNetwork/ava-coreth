@@ -19,12 +19,12 @@ package triedb
 import (
 	"errors"
 
-	"github.com/ava-labs/coreth/trie"
-	"github.com/ava-labs/coreth/trie/trienode"
-	"github.com/ava-labs/coreth/trie/triestate"
-	"github.com/ava-labs/coreth/triedb/database"
-	"github.com/ava-labs/coreth/triedb/hashdb"
-	"github.com/ava-labs/coreth/triedb/pathdb"
+	"github.com/KyberNetwork/ava-coreth/trie"
+	"github.com/KyberNetwork/ava-coreth/trie/trienode"
+	"github.com/KyberNetwork/ava-coreth/trie/triestate"
+	"github.com/KyberNetwork/ava-coreth/triedb/database"
+	"github.com/KyberNetwork/ava-coreth/triedb/hashdb"
+	"github.com/KyberNetwork/ava-coreth/triedb/pathdb"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethdb"
 	"github.com/ethereum/go-ethereum/log"

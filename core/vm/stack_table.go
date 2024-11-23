@@ -27,7 +27,7 @@
 package vm
 
 import (
-	"github.com/ava-labs/coreth/params"
+	"github.com/KyberNetwork/ava-coreth/params"
 )
 
 func minSwapStack(n int) int {
